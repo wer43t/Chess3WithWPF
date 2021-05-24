@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chess", "Chess\Chess.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigureCore", "FigureCore\FigureCore.csproj", "{FAF49643-568D-46C8-A6A9-47A85CB0C8BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFChess", "WPFChess\WPFChess.csproj", "{0DEE6E24-EEB6-4F24-82C1-AD9EB5C4AF22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FAF49643-568D-46C8-A6A9-47A85CB0C8BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAF49643-568D-46C8-A6A9-47A85CB0C8BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAF49643-568D-46C8-A6A9-47A85CB0C8BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DEE6E24-EEB6-4F24-82C1-AD9EB5C4AF22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DEE6E24-EEB6-4F24-82C1-AD9EB5C4AF22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DEE6E24-EEB6-4F24-82C1-AD9EB5C4AF22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DEE6E24-EEB6-4F24-82C1-AD9EB5C4AF22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
