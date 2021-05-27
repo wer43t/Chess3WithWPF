@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FigureCore\FigureCore.csproj">
+      <Project>{faf49643-568d-46c8-a6a9-47a85cb0c8bb}</Project>
+      <Name>FigureCore</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

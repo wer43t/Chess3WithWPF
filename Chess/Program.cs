@@ -3,8 +3,8 @@
   15.03.2021
   */
 
-using System;
 using FigureCore;
+using System;
 
 namespace chess_3
 {

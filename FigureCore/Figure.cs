@@ -48,7 +48,7 @@ namespace FigureCore
 
     }
 
-public class Queen : Figure
+    public class Queen : Figure
     {
         public Queen(int x1, int y1) : base(x1, y1) { }
 
@@ -58,7 +58,7 @@ public class Queen : Figure
         }
     }
 
-public class Rook : Figure
+    public class Rook : Figure
     {
         public Rook(int x1, int y1) : base(x1, y1) { }
 
@@ -68,7 +68,7 @@ public class Rook : Figure
         }
     }
 
-public class Bishop : Figure
+    public class Bishop : Figure
     {
         public Bishop(int x1, int y1) : base(x1, y1) { }
 
@@ -78,7 +78,7 @@ public class Bishop : Figure
         }
     }
 
-public class Knight : Figure
+    public class Knight : Figure
     {
         public Knight(int x1, int y1) : base(x1, y1) { }
 

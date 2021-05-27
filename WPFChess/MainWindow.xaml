@@ -5,48 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFChess"
         mc:Ignorable="d"
-        Title="MainWindow" Height="595.811" Width="574">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <TextBlock x:Name="textBlock" Grid.Column="0" Grid.ColumnSpan="8" />
-        <Button Grid.Column="0" Grid.Row="0"></Button>
-        <Button Grid.Column="1" Grid.Row="0"></Button>
-        <Button Grid.Column="2" Grid.Row="0"></Button>
-        <Button Grid.Column="3" Grid.Row="0"></Button>
-        <Button Grid.Column="0" Grid.Row="1"></Button>
-        <Button Grid.Column="1" Grid.Row="1"></Button>
-        <Button Grid.Column="2" Grid.Row="1"></Button>
-        <Button Grid.Column="3" Grid.Row="1"></Button>
-        <Button Grid.Column="0" Grid.Row="2"></Button>
-        <Button Grid.Column="1" Grid.Row="2"></Button>
-        <Button Grid.Column="2" Grid.Row="2"></Button>
-        <Button Grid.Column="3" Grid.Row="2"></Button>
-        <Button Grid.Column="0" Grid.Row="3"></Button>
-        <Button Grid.Column="1" Grid.Row="3"></Button>
-        <Button Grid.Column="2" Grid.Row="3"></Button>
-        <Button Grid.Column="3" Grid.Row="3"></Button>
-        <Button Grid.Column="0" Grid.Row="4"></Button>
-        <Button Grid.Column="1" Grid.Row="4"></Button>
-        <Button Grid.Column="2" Grid.Row="4"></Button>
-        <Button Grid.Column="3" Grid.Row="4"></Button>
-    </Grid>
+        Title="MainWindow" Height="500" Width="486.648">
+    <UniformGrid x:Name="chessBoard"/>
 </Window>
