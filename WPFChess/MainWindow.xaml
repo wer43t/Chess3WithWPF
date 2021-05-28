@@ -5,6 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFChess"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="486.648">
-    <UniformGrid x:Name="chessBoard"/>
+        Title="MainWindow" Height="700" Width="988.371">
+    <DockPanel Margin="124,84,137,85">
+        <UniformGrid x:Name="chessBoard" Width="473" Height="500" HorizontalAlignment="Left"/>
+        <ListBox x:Name="lbData" Height="500" Width="200"/>
+    </DockPanel>
 </Window>
