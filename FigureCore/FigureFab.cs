@@ -53,8 +53,8 @@ static public class FigureFab
                 {
                     { "X", 1 },
                     { "Y", 1 }
-                }
-            imgURI = (new Uri(@"C:\Users\abrar\source\repos\wer43t\Chess3WithWPF\WPFChess\Resourses\king.png")
+                },
+            imgURI = new Uri(@"Resourses\king.png", UriKind.Relative)
         });
 
         figuresData.Add(new FiguresData
@@ -64,8 +64,8 @@ static public class FigureFab
                 {
                     { "X", 1 },
                     { "Y", 1 }
-                }
-            imgURI = (new Uri(@"C:\Users\abrar\source\repos\wer43t\Chess3WithWPF\WPFChess\Resourses\king.png")
+                },
+            imgURI = new Uri(@"Resourses\quen.png", UriKind.Relative)
         });
 
         figuresData.Add(new FiguresData
@@ -75,8 +75,8 @@ static public class FigureFab
                 {
                     { "X", 1 },
                     { "Y", 1 }
-                }
-            imgURI = (new Uri(@"C:\Users\abrar\source\repos\wer43t\Chess3WithWPF\WPFChess\Resourses\king.png")
+                },
+            imgURI = new Uri(@"Resourses\rook.png", UriKind.Relative)
         });
 
         figuresData.Add(new FiguresData
@@ -86,8 +86,8 @@ static public class FigureFab
                 {
                     { "X", 1 },
                     { "Y", 1 }
-                }
-            imgURI = (new Uri(@"C:\Users\abrar\source\repos\wer43t\Chess3WithWPF\WPFChess\Resourses\king.png")
+                },
+            imgURI = new Uri(@"Resourses\bishop.png", UriKind.Relative)
         });
 
         figuresData.Add(new FiguresData
@@ -97,8 +97,8 @@ static public class FigureFab
                 {
                     { "X", 1 },
                     { "Y", 1 }
-                }
-            imgURI = (new Uri(@"C:\Users\abrar\source\repos\wer43t\Chess3WithWPF\WPFChess\Resourses\king.png")
+                },
+            imgURI = new Uri(@"Resourses\knight.png", UriKind.Relative)
         });
 
         return figuresData;

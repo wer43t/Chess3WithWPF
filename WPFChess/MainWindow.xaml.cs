@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using FigureCore;
 
 namespace WPFChess
 {
@@ -12,6 +13,8 @@ namespace WPFChess
     public partial class MainWindow : Window
     {
         private Button[,] buttons = new Button[8, 8];
+        private Figure figure;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -41,34 +44,35 @@ namespace WPFChess
             }
         }
 
-        private void MainWindow_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (lbData.SelectedItem != null)
+            {
+                ChangeFigData(GetKeyAndValue(sender));
+                figure = FigureFab.Make(lbData.SelectedItem as FiguresData);
+                sender.GetType().GetProperty("Content").SetValue(sender, GetFigImage((lbData.SelectedItem as FiguresData).imgURI));
+            }
+            else
+            {
+                MessageBox.Show("Not selected fig");
+            }
+        }
+
+        private StackPanel GetFigImage(Uri imgs)
+        {
             Image img = new Image();
-            img.Source = new BitmapImage(new Uri(@"C:\Users\abrar\source\repos\wer43t\Chess3WithWPF\WPFChess\Resourses\king.png"));
+            img.Source = new BitmapImage(imgs);
 
             StackPanel stackPnl = new StackPanel();
             stackPnl.Orientation = Orientation.Horizontal;
             stackPnl.Margin = new Thickness(10);
             stackPnl.Children.Add(img);
-            sender.GetType().GetProperty("Content").SetValue(sender, stackPnl);
-            ChangeFigData(GetKeyAndValue(sender));
-            var fig = FigureFab.Make(lbData.SelectedItem as FiguresData);
-            MessageBox.Show($"{(fig.CanMove(5, 7) ? "YES" : "NO")}");
-        }
-
-        private void GetFigImage()
-        {
-
+            return stackPnl;
         }
 
         private string[] GetKeyAndValue(object sender)
         {
-            MessageBox.Show($"{sender.GetType().GetProperty("Name").GetValue(sender)}");
             return sender.GetType().GetProperty("Name").GetValue(sender).ToString().Split('a');
         }
 
