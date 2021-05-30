@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using FigureCore;
+using System;
 
 public class FiguresData
 {
     public string Name;
     public Dictionary<string, int> Data;
+    public Uri imgURI;
 
     public override string ToString()
     {
@@ -52,6 +54,7 @@ static public class FigureFab
                     { "X", 1 },
                     { "Y", 1 }
                 }
+            imgURI = (new Uri(@"C:\Users\abrar\source\repos\wer43t\Chess3WithWPF\WPFChess\Resourses\king.png")
         });
 
         figuresData.Add(new FiguresData
@@ -62,6 +65,7 @@ static public class FigureFab
                     { "X", 1 },
                     { "Y", 1 }
                 }
+            imgURI = (new Uri(@"C:\Users\abrar\source\repos\wer43t\Chess3WithWPF\WPFChess\Resourses\king.png")
         });
 
         figuresData.Add(new FiguresData
@@ -72,6 +76,7 @@ static public class FigureFab
                     { "X", 1 },
                     { "Y", 1 }
                 }
+            imgURI = (new Uri(@"C:\Users\abrar\source\repos\wer43t\Chess3WithWPF\WPFChess\Resourses\king.png")
         });
 
         figuresData.Add(new FiguresData
@@ -82,6 +87,7 @@ static public class FigureFab
                     { "X", 1 },
                     { "Y", 1 }
                 }
+            imgURI = (new Uri(@"C:\Users\abrar\source\repos\wer43t\Chess3WithWPF\WPFChess\Resourses\king.png")
         });
 
         figuresData.Add(new FiguresData
@@ -92,6 +98,7 @@ static public class FigureFab
                     { "X", 1 },
                     { "Y", 1 }
                 }
+            imgURI = (new Uri(@"C:\Users\abrar\source\repos\wer43t\Chess3WithWPF\WPFChess\Resourses\king.png")
         });
 
         return figuresData;

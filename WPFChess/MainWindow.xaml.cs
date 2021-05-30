@@ -59,7 +59,10 @@ namespace WPFChess
             ChangeFigData(GetKeyAndValue(sender));
             var fig = FigureFab.Make(lbData.SelectedItem as FiguresData);
             MessageBox.Show($"{(fig.CanMove(5, 7) ? "YES" : "NO")}");
+        }
 
+        private void GetFigImage()
+        {
 
         }
 
