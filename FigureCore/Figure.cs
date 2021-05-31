@@ -10,8 +10,8 @@ namespace FigureCore
 
     public class Figure
     {
-        protected int X1;
-        protected int Y1;
+        public int X1;
+        public int Y1;
 
         public Figure(int x1, int y1)
         {

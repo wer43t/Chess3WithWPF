@@ -14,13 +14,14 @@ namespace WPFChess
     {
         private Button[,] buttons = new Button[8, 8];
         private Figure figure;
+        private bool pieceInBoard = false;
+        private object prevSender;
 
         public MainWindow()
         {
             InitializeComponent();
 
             lbData.ItemsSource = FigureFab.InitFiguresData();
-
             chessBoard.Rows = 8;
             chessBoard.Columns = 8;
 
@@ -45,13 +46,35 @@ namespace WPFChess
         }
 
 
+
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (lbData.SelectedItem != null)
             {
-                ChangeFigData(GetKeyAndValue(sender));
-                figure = FigureFab.Make(lbData.SelectedItem as FiguresData);
-                sender.GetType().GetProperty("Content").SetValue(sender, GetFigImage((lbData.SelectedItem as FiguresData).imgURI));
+                if (!pieceInBoard)
+                {
+                    ChangeFigData(GetKeyAndValue(sender));
+                    figure = FigureFab.Make(lbData.SelectedItem as FiguresData);
+                    sender.GetType().GetProperty("Content").SetValue(sender, GetFigImage((lbData.SelectedItem as FiguresData).imgURI));
+                    pieceInBoard = true;
+                    prevSender = sender;
+                }
+                else
+                {
+                    string[] tempXY = GetKeyAndValue(sender);
+                    if (figure.CanMove(Convert.ToInt32(tempXY[3]), Convert.ToInt32(tempXY[1])))
+                    {
+                        figure.X1 = Convert.ToInt32(tempXY[3]);
+                        figure.Y1 = Convert.ToInt32(tempXY[1]);
+                        prevSender.GetType().GetProperty("Content").SetValue(prevSender, null);
+                        sender.GetType().GetProperty("Content").SetValue(sender, GetFigImage((lbData.SelectedItem as FiguresData).imgURI));
+                        prevSender = sender;
+                        pieceInBoard = false;
+                    }
+                }
+                //sender.GetType().GetMethod()
             }
             else
             {
@@ -73,6 +96,7 @@ namespace WPFChess
 
         private string[] GetKeyAndValue(object sender)
         {
+            MessageBox.Show($"{sender.GetType().GetProperty("Name").GetValue(sender)}");
             return sender.GetType().GetProperty("Name").GetValue(sender).ToString().Split('a');
         }
 
