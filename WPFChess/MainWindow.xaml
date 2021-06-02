@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFChess"
         mc:Ignorable="d"
-        Title="MainWindow" Height="699.108" Width="943.371" ResizeMode="NoResize">
-    <DockPanel Margin="60,50,128,0" Height="572" VerticalAlignment="Top">
+        Title="MainWindow" Height="699.108" Width="992.604" ResizeMode="NoResize">
+    <DockPanel Margin="60,50,37,0" Height="572" VerticalAlignment="Top">
         <UniformGrid x:Name="chessBoard" Width="498" Height="500"/>
-        <ListBox x:Name="lbData" Height="500" RenderTransformOrigin="0.5,0.5" Width="202">
+        <ListBox x:Name="lbData" Height="500" RenderTransformOrigin="0.5,0.5" Width="202" SelectionChanged="lbData_SelectionChanged">
         </ListBox>
+        <Button x:Name="ClearB" Content="Clear&#xD;&#xA;"  Width="98" Margin="0,0,0,281" Click="Clear_Button_Click_1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="44"/>
     </DockPanel>
 </Window>

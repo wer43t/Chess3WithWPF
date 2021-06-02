@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -55,30 +56,55 @@ namespace WPFChess
             {
                 if (!pieceInBoard)
                 {
-                    ChangeFigData(GetKeyAndValue(sender));
-                    figure = FigureFab.Make(lbData.SelectedItem as FiguresData);
-                    sender.GetType().GetProperty("Content").SetValue(sender, GetFigImage((lbData.SelectedItem as FiguresData).imgURI));
-                    pieceInBoard = true;
-                    prevSender = sender;
+                    SetPieceOnBoard(sender);
                 }
                 else
                 {
-                    string[] tempXY = GetKeyAndValue(sender);
-                    if (figure.CanMove(Convert.ToInt32(tempXY[3]), Convert.ToInt32(tempXY[1])))
-                    {
-                        figure.X1 = Convert.ToInt32(tempXY[3]);
-                        figure.Y1 = Convert.ToInt32(tempXY[1]);
-                        prevSender.GetType().GetProperty("Content").SetValue(prevSender, null);
-                        sender.GetType().GetProperty("Content").SetValue(sender, GetFigImage((lbData.SelectedItem as FiguresData).imgURI));
-                        prevSender = sender;
-                        pieceInBoard = false;
-                    }
+                    MovePieceOnBoard(sender);
                 }
-                //sender.GetType().GetMethod()
             }
             else
             {
                 MessageBox.Show("Not selected fig");
+            }
+        }
+
+        private void MovePieceOnBoard(object sender)
+        {
+            string[] tempXY = GetKeyAndValue(sender);
+            if (figure.CanMove(Convert.ToInt32(tempXY[3]), Convert.ToInt32(tempXY[1])))
+            {
+                figure.X1 = Convert.ToInt32(tempXY[3]);
+                figure.Y1 = Convert.ToInt32(tempXY[1]);
+                Clear();
+                sender.GetType().GetProperty("Content").SetValue(sender, GetFigImage((lbData.SelectedItem as FiguresData).imgURI));
+                prevSender = sender;
+                pieceInBoard = false;
+            }
+            else
+            {
+                MessageBox.Show("Can't move there, try again");
+            }
+        }
+
+        private void SetPieceOnBoard(object sender)
+        {
+            Clear();
+            ChangeFigData(GetKeyAndValue(sender));
+            figure = FigureFab.Make(lbData.SelectedItem as FiguresData);
+            sender.GetType().GetProperty("Content").SetValue(sender, GetFigImage((lbData.SelectedItem as FiguresData).imgURI));
+            pieceInBoard = true;
+            prevSender = sender;
+        }
+
+
+
+        private void Clear()
+        {
+            if (prevSender != null)
+            {
+                prevSender.GetType().GetProperty("Content").SetValue(prevSender, null);
+                pieceInBoard = false;
             }
         }
 
@@ -96,7 +122,6 @@ namespace WPFChess
 
         private string[] GetKeyAndValue(object sender)
         {
-            MessageBox.Show($"{sender.GetType().GetProperty("Name").GetValue(sender)}");
             return sender.GetType().GetProperty("Name").GetValue(sender).ToString().Split('a');
         }
 
@@ -113,6 +138,16 @@ namespace WPFChess
                 }
                 catch { }
             }
+        }
+
+        private void Clear_Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Clear();
+        }
+
+        private void lbData_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Clear();
         }
     }
 }
